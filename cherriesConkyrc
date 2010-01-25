@@ -1,0 +1,48 @@
+# Cherries
+# by londonali1010
+
+background no
+update_interval 1
+total_run_times 0
+#own_window yes
+own_window_transparent yes
+own_window_class Conky
+own_window_hints undecorate,sticky,skip_pager,skip_taskbar,below
+double_buffer yes
+no_buffers yes
+text_buffer_size 2048
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+use_spacer none
+minimum_size 1000 0
+alignment top_left 
+gap_x 24 
+gap_y 400
+uppercase no
+use_xft yes
+xftfont DejaVu Sans:size=12
+xftalpha 0.8
+default_color d9b2ad
+
+TEXT
+${voffset 300}${font DejaVu Sans:size=24}${time %A}, ${time %d} ${time %B} ${time %Y}${font}
+${battery_bar 8,720 C23B}
+${voffset -8}${fs_bar 8,720 /}
+${voffset -8}${goto 400}${cpubar 8,310 cpu}
+${voffset -8}${goto 400}${font saxMono:size=9}${top pid 1}${font DejaVu Sans:size=8}${voffset -1} ${top name 1}${voffset 1}${goto 660}${font saxMono:size=9}${top cpu 1}
+${goto 400}${font saxMono:size=9}${top pid 2}${font DejaVu Sans:size=8}${voffset -1} ${top name 2}${voffset 1}${goto 650}${font saxMono:size=9}${top cpu 2}
+${goto 400}${font saxMono:size=9}${top pid 3}${font DejaVu Sans:size=8}${voffset -1} ${top name 3}${voffset 1}${goto 640}${font saxMono:size=9}${top cpu 3}
+${goto 400}${font saxMono:size=9}${top pid 4}${font DejaVu Sans:size=8}${voffset -1} ${top name 4}${voffset 1}${goto 620}${font saxMono:size=9}${top cpu 4}
+${goto 400}${membar 8, 260}
+${goto 400}${font saxMono:size=9}${top_mem pid 1}${font DejaVu Sans:size=8}${voffset -1} ${top_mem name 1}${voffset 1}${goto 620}${font saxMono:size=9}${top_mem mem 1}
+${goto 400}${font saxMono:size=9}${top_mem pid 2}${font DejaVu Sans:size=8}${voffset -1} ${top_mem name 2}${voffset 1}${goto 630}${font saxMono:size=9}${top_mem mem 2}
+${goto 400}${font saxMono:size=9}${top_mem pid 3}${font DejaVu Sans:size=8}${voffset -1} ${top_mem name 3}${voffset 1}${goto 640}${font saxMono:size=9}${top_mem mem 3}
+${goto 400}${font saxMono:size=9}${top_mem pid 4}${font DejaVu Sans:size=8}${voffset -1} ${top_mem name 4}${voffset 1}${goto 650}${font saxMono:size=9}${top_mem mem 4}${font}
+${voffset -90}${font route3:size=160}${time %k}${font route3:size=100}${voffset -80}${goto 230}${time %M}${font}
+${voffset -500}${execpi 360 conkyForecast -i --location=<location code> --template=/<path>/conkyForecast.template}
+${voffset -290}${execpi 10 /<path>/conkyhudson.py -t /<path>/conkyHudson.template}
